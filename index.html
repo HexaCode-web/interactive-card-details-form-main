@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <div class="CardFront">
+      <p id="CardName">Jane Appleseed</p>
+      <p id="CardNumber">0000 0000 0000 0000</p>
+      <p id="CardDate">
+        <span id="CardMM">00</span>/<span id="CardYY">00</span>
+      </p>
+      <img src="images/bg-card-front.png" />
+    </div>
+    <div class="CardBack">
+      <p id="CVC">000</p>
+      <img src="images/bg-card-back.png" />
+    </div>
+    <div class="aside"></div>
+    <div class="main">
+      <div class="completed">
+        <img src="images/icon-complete.svg" id="logo" />
+        <h2>thank you!</h2>
+        <p>we have added your card detailes</p>
+        <input type="submit" value="Confirm" onclick="Reload()" />
+      </div>
+      <form action="#" class="info">
+        <label for="Name">Cardholder Name</label>
+        <input
+          oninput="addName()"
+          required
+          type="text"
+          id="Name"
+          placeholder="e.g. Jane Appleseed"
+        />
+        <span class="Failed" id="NameEmpty">Cant be blank</span>
+        <label for="Number">Card Number</label>
+        <input
+          oninput="addNumber()"
+          required
+          type="text"
+          id="Number"
+          placeholder="e.g. 1234 5678 9123 0000"
+        />
+        <span class="Failed" id="NumberEmpty">Cant be blank</span>
+        <div class="Date">
+          <span>Exp. Date (MM/YY)</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>
+            CVC</span
+          ><br />
+          <input
+            oninput="addDateMM()"
+            required
+            type="number"
+            id="MM"
+            placeholder="MM"
+          />
+          <input
+            oninput="addDateYY()"
+            required
+            type="number"
+            id="YY"
+            placeholder="YY"
+          />
+          <input
+            oninput="addCVC()"
+            required
+            type="number"
+            id="cvc"
+            placeholder="e.g. 123"
+          />
+        </div>
+        <div>
+          <span class="Failed" id="DateEmpty">Cant be blank</span
+          ><span class="Failed" id="CVCEmpty">Cant be blank</span>
+        </div>
+        <input type="submit" value="Confirm" onclick="validate()" />
+      </form>
+    </div>
+
+    <!-- Completed state start -->
+
+    <!-- Thank you! We've added your card details Continue -->
+    <script src="script.js"></script>
+  </body>
+</html>
